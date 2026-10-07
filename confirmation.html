@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-Transfert — Traitement</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #111;
+    text-align: center;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px 25px;
+}
+
+h1 {
+    margin: 0;
+    color: #f07c18;
+    font-size: 58px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.line {
+    height: 22px;
+    background: #f1f1f1;
+    margin: 100px 0 55px;
+}
+
+.check {
+    width: 285px;
+    height: 285px;
+    margin: 0 auto 35px;
+    border-radius: 50%;
+    background: #32c53b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check::after {
+    content: "✓";
+    color: white;
+    font-size: 190px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.success {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0 0 18px;
+}
+
+.subtitle {
+    font-size: 27px;
+    color: #777;
+    font-weight: bold;
+    line-height: 1.45;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.message {
+    margin-top: 100px;
+    font-size: 31px;
+    line-height: 1.5;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo {
+    margin-top: 55px;
+    padding: 18px;
+    background: #fff4cc;
+    border-radius: 8px;
+    color: #555;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 45px 18px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .line {
+        margin: 70px 0 45px;
+    }
+
+    .check {
+        width: 190px;
+        height: 190px;
+    }
+
+    .check::after {
+        font-size: 125px;
+    }
+
+    .success {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .message {
+        margin-top: 65px;
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Traitement</h1>
+
+    <div class="line"></div>
+
+    <div class="check"></div>
+
+    <h2 class="success">
+        Demande enregistrée !
+    </h2>
+
+    <p class="subtitle">
+        Votre demande a été soumise avec succès
+        pour traitement.
+    </p>
+<div id="montantAffiche" style="
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 25px;
+"></div>
+    <div class="message">
+        Votre demande de transfert est actuellement
+        en cours de traitement.<br><br>
+
+        Vous recevrez une notification lorsque le
+        traitement de la démonstration sera terminé.
+    </div>
+
+    <div class="demo">
+        Transaction en cours.
+    </div>
+
+</div>
+<script>
+const montant = localStorage.getItem("montantETransfert");
+
+if (montant) {
+    document.getElementById("montantAffiche").textContent =
+        "Montant : " + montant;
+}
+</script>
+</body>
+</html>
